@@ -1,0 +1,88 @@
+Form Design using Various Web Controls
+
+Default.aspx
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs"
+Inherits" Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html
+xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Form Design with Web Controls</title>
+<style>
+.form-container {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   background-color: #f9f919;
+}
+.form-group {
+   margin-bottom: 15px;
+}
+label {
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<form id="form1" runat="server" class="form-container">
+<h2>Registration Form</h2>
+    <!--Name TextBox-->
+<div class="form-group">
+  <label for="txtName">Name: </label>
+  <asp:TextBox ID="txtName" runat="server" placeholder="Enter your full name"
+CssClass="form-control"></asp:TextBox>
+    </div>
+
+    <!--Email TextBox-->
+    <div class="form-group">
+      <label for="txtEmail">Email:</label>
+      <asp:TextBox ID="txtEmail" runat="server" placeholder="Enter your email"
+CssClass="form-control"></asp:TextBox>
+    </div>
+<!--Country DropDownList-->
+<div class="form-group">
+  <label for="ddlCountry">Country:</label>
+  <asp:DropDownList ID="ddlCountry" runat="server" CssClass="form-control">
+  <asp:ListItem Text="Select Country" Value="0"></asp:ListItem>
+  <asp:ListItem Text="USA" Value="1"></asp:ListItem>
+  <asp:ListItem Text="India" Value="2"></asp:ListItem>
+  <asp:ListItem Text="Canada" Value="3"></asp:ListItem>
+</asp:DropDownList>
+</div>
+<!-- Gender RadioButtonList -->
+<div class="form-group">
+<label for="rblGender">Gender:</label>
+<asp:RadioButtonList ID="rblGender" runat="server">
+  <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
+  <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
+</asp:RadioButtonList>
+</div>
+<!--Hobbies CheckBoxList-->
+<div class="form-group">
+<label for="chkHobbies">Hobbies:</label>
+<asp:CheckBoxList ID="chkHobbies" runat="server">
+<asp:ListItem Text="Reading" Value="Reading"></asp:ListItem>
+<asp:ListItem Text="Traveling" Value="Traveling"></asp:ListItem>
+<asp:ListItem Text="Music" Value="Music"></asp:ListItem>
+</asp:CheckBoxList>
+</div>
+</form>
+</body>
+</html>
+Default.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public partial class_Default: System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{
+}
+}
